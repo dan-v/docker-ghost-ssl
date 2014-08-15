@@ -1,0 +1,1 @@
+server.crt and server.key files need to go in this directory
