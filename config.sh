@@ -1,12 +1,7 @@
 #!/bin/bash
 
-ghostblog_url="https://vittegleo.com"
-
-ghostblog_build_folder="build_ghostblog"
-ghostblog_proxy_build_folder="build_ghostblog_proxy"
-
 ghostblog_image_name="9df8/ghostblog"
-ghostblog_container_name="ghostblog"
+ghostblog_container_name="ghostblog" 
 ghostblog_proxy_image_name="9df8/ghostblog_proxy"
 ghostblog_proxy_container_name="ghostblog_proxy"
 

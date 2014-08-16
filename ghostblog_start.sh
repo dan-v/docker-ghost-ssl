@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if [ "$#" -ne 1 ]; then
+    echo "Must give blog URL as parameter (e.g. https://test.com)"
+    exit 1
+fi
+ghostblog_url=$1
+
+cd $(dirname $0)
+
 . config.sh
 
 check=$(docker logs ${ghostblog_container} > /dev/null 2>&1)
@@ -13,8 +21,6 @@ if [ $? -eq 0 ]; then
 	echo "Container ${ghostblog_proxy_container} is still running. Exiting."
 	exit 1
 fi
-
-cd $(dirname $0)
 
 if [ ! -f ${ssl_crt} ]; then
     echo "Need to put SSL certificate at ${ssl_crt}. Exiting."
