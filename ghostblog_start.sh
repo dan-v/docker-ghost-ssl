@@ -42,6 +42,20 @@ if [ ! -f ${ghost_config_file} ]; then
     exit 1	
 fi
 
+echo "Pulling latest image ${ghostblog_image_name}"
+pull=$(docker pull ${ghostblog_image_name} > /dev/null 2>&1)
+if [ $? -ne 0 ]; then
+	echo "Failed to pull image ${ghostblog_image_name}. Exiting."
+	exit 1
+fi
+
+echo "Pulling latest image ${ghostblog_proxy_image_name}"
+pull=$(docker pull ${ghostblog_proxy_image_name} > /dev/null 2>&1)
+if [ $? -ne 0 ]; then
+	echo "Failed to pull image ${ghostblog_proxy_image_name}. Exiting."
+	exit 1
+fi
+
 echo "Updating ${ghost_config_file} with blog url ${ghostblog_url}"
 sed -i "/url:/c\ \ \ \ \ \ \ \ url:\ '${ghostblog_url}', " ${ghost_config_file}
 if [ $? -ne 0 ]; then
