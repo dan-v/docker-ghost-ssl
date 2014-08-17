@@ -4,7 +4,7 @@ This project builds and deploys two Docker containers, one for Ghost and the oth
 
 ### Requirements
 * Linux host with Git and Docker installed
-* SSL cert and key at data/certificates/server.crt and data/certificates/server.key
+* SSL cert and key
 
 ### Running blog
 
@@ -14,6 +14,10 @@ This project builds and deploys two Docker containers, one for Ghost and the oth
 
 #### Import existing Ghost blog data (Optional) 
 Put your Ghost data (contents directory) into data/ghostblog_data directory before starting containers
+
+#### SSL Configuration
+* Copy SSL cert to data/certificates/server.crt
+* Copy SSL private key to data/certificates/server.key
 
 #### Starting blog
 Run the start script with your blog url like the example below. This will pull the latest images and start containers with appropriate port and volume mappings. If all goes well, your blog should be up and running.
