@@ -1,3 +1,5 @@
+# This repository is no longer maintained.
+
 docker-ghost-ssl
 ================
 This project builds and deploys two Docker containers, one for Ghost and the other for Nginx with SSL configured.
